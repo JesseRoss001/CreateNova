@@ -1,4 +1,46 @@
 /* General styling for services section */
+.hero-heading {
+    object-fit: cover;
+    height: 10vh;
+    @media (min-width: 479px) {height:16vh;}
+    width: 100%;
+    max-height: 100%;
+    clip-path: polygon(10% 60%, 90% 60%, 90% 40%, 10% 40%);
+
+    /* Below 480px */
+    @media (max-width: 479px) { clip-path: polygon(10% 80%, 90% 80%, 90% 20%, 10% 20%); }
+    @media (max-width: 467px) { clip-path: polygon(10% 82%, 90% 82%, 90% 18%, 10% 18%); }
+    @media (max-width: 455px) { clip-path: polygon(10% 84%, 90% 84%, 90% 16%, 10% 16%); }
+    @media (max-width: 443px) { clip-path: polygon(10% 86%, 90% 86%, 90% 14%, 10% 14%); }
+    @media (max-width: 431px) { clip-path: polygon(10% 88%, 90% 88%, 90% 12%, 10% 12%); }
+    @media (max-width: 419px) { clip-path: polygon(10% 90%, 90% 90%, 90% 10%, 10% 10%); }
+    @media (max-width: 407px) { clip-path: polygon(10% 92%, 90% 92%, 90% 8%, 10% 8%); }
+    @media (max-width: 395px) { clip-path: polygon(10% 94%, 90% 94%, 90% 6%, 10% 6%); }
+    @media (max-width: 383px) { clip-path: polygon(10% 96%, 90% 96%, 90% 4%, 10% 4%); }
+    @media (max-width: 371px) { clip-path: polygon(10% 98%, 90% 98%, 90% 2%, 10% 2%); }
+    @media (max-width: 359px) { clip-path: polygon(10% 100%, 90% 100%, 90% 0%, 10% 0%); }
+    @media (min-width: 480px) { clip-path: polygon(10% 75%, 90% 75%, 90% 25%, 10% 25%); }
+    @media (min-width: 576px) { clip-path: polygon(10% 80%, 90% 80%, 90% 20%, 10% 20%); }
+  @media (min-width: 640px) { clip-path: polygon(10% 82%, 90% 82%, 90% 18%, 10% 18%); }
+  @media (min-width: 704px) { clip-path: polygon(10% 84%, 90% 84%, 90% 16%, 10% 16%); }
+  @media (min-width: 768px) { clip-path: polygon(10% 86%, 90% 86%, 90% 14%, 10% 14%); }
+  @media (min-width: 832px) { clip-path: polygon(10% 88%, 90% 88%, 90% 12%, 10% 12%); }
+  @media (min-width: 896px) { clip-path: polygon(10% 90%, 90% 90%, 90% 10%, 10% 10%); }
+
+  /* Mid-range Adjustments */
+  @media (min-width: 960px) { clip-path: polygon(10% 92%, 90% 92%, 90% 8%, 10% 8%); }
+  @media (min-width: 1024px) { clip-path: polygon(10% 94%, 90% 94%, 90% 6%, 10% 6%); }
+  @media (min-width: 1088px) { clip-path: polygon(10% 95%, 90% 95%, 90% 5%, 10% 5%); }
+  @media (min-width: 1152px) { clip-path: polygon(10% 96%, 90% 96%, 90% 4%, 10% 4%); }
+  @media (min-width: 1216px) { clip-path: polygon(10% 97%, 90% 97%, 90% 3%, 10% 3%); }
+  @media (min-width: 1280px) { clip-path: polygon(10% 98%, 90% 98%, 90% 2%, 10% 2%); }
+
+  /* High-resolution Refinement */
+  @media (min-width: 1344px) { clip-path: polygon(10% 99%, 90% 99%, 90% 1%, 10% 1%); }
+  @media (min-width: 1408px) { clip-path: polygon(10% 100%, 90% 100%, 90% 0%, 10% 0%); }
+  @media (min-width: 1472px) { clip-path: polygon(10% 99%, 90% 99%, 90% 1%, 10% 1%); }
+    /* Add more media queries as needed, adjusting Y-axis coordinates */
+  }
 .services-section {
     padding: 80px 0;
     background-color: #f5f5f5; /* Adjust background color as needed */
