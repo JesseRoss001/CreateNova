@@ -16,7 +16,7 @@ object-position: 50% 50%;
     background: white; /* Change this if your navbar has a different background color */
     width: auto;
     top: 56px; /* Adjust this value if your navbar has a different height */
-    left: -40px;
+    left: 0;
     z-index: 1000;
     border-top: 1px solid #ddd; /* Optional: adds a border top for better visual separation */
   }
