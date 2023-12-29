@@ -13,7 +13,7 @@ section::before, section::after {
   position: absolute;
   left: 0;
   right: 0;
-  height: 2px;
+  height: 4px;
   background: transparent;
   animation: borderFade 15s infinite ease-in-out;
 }
@@ -31,7 +31,7 @@ section::after {
     background-color: transparent;
   }
   50% {
-    background-color: #ee0f0f; /* The border fades to light red */
+    background-color:rgba(0, 0, 0, 0.3); /* The border fades to light red */
   }
 }
 /* Pulse animation for service items */
@@ -132,7 +132,7 @@ section::after {
 }
 
 .services-section {
-  background-color: #ffffff; /* Adjust background color as needed */
+  background-color: #fefefe; /* Adjust background color as needed */
 }
 
 .section-heading {
@@ -230,13 +230,19 @@ section::after {
   text-transform: uppercase; /* Optional: uppercase for more presence */
 }
 
-
 .service-price {
-  font-family: 'Montserrat', sans-serif; /* Keep font consistent with the title */
-  font-size: 18px; /* Smaller than the title for hierarchy */
-  font-weight: 600; /* Slightly less weight than the title */
-  color: #666; /* Subdued color for the price */
-  margin-top: 15px; /* Space above the price */
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #666;
+  margin-top: 15px;
+  transition: transform 0.5s ease, color 0.5s ease;
+}
+
+.service-price:hover {
+  transform: scale(1.1); /* Adjust scale as needed */
+  color: #ee0f0f; /* Change color on hover */
 }
 .drop {
   position: absolute;
@@ -278,4 +284,20 @@ section::after {
 
 .btn-lg {
   font-size: 18px; /* Adjust font size as needed */
+}
+.footer-section {
+  padding: 20px 0;
+  background-color: #f8f9fa;
+  color: #666;
+  text-align: center;
+  font-size: 14px;
+}
+
+.btn-17:hover, .btn-success:hover {
+  transform: scale(1.05); /* Slight increase in size on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Shadow effect for depth */
+}
+
+.btn-17:active, .btn-success:active {
+  transform: scale(0.95); /* Slight decrease in size on click */
 }
