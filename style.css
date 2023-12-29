@@ -1,22 +1,54 @@
 
 
 /* Service cards will have a transition for their background to fade in and out */
-.service-item {
-  background-color: #ffffff; /* Default background to white */
-  animation: cardBackgroundFade 45s infinite ease-in-out;
-  position: relative; /* Needed for z-index to take effect */
-  z-index: 2; /* Make sure service cards are above the rippling background */
-  
+/* Service cards will have a transition for their border to fade in and out */
+
+section {
+  position: relative;
+  /* Other styles for your sections */
 }
 
-/* Keyframes for service cards background transition */
-@keyframes cardBackgroundFade {
+section::before, section::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: transparent;
+  animation: borderFade 15s infinite ease-in-out;
+}
+
+section::before {
+  top: -2px; /* Position the pseudo-element at the top of the section */
+}
+
+section::after {
+  bottom: -2px; /* Position the pseudo-element at the bottom of the section */
+}
+
+@keyframes borderFade {
   0%, 100% {
-    background-color: #ffffff;
+    background-color: transparent;
   }
-  20% {
-    background-color: #ee0f0f; /* Light red when the ripple is behind them */
+  50% {
+    background-color: #ee0f0f; /* The border fades to light red */
   }
+}
+/* Pulse animation for service items */
+@keyframes pulseBorder {
+  0% {
+    box-shadow: 0 0 0 0 rgba(238, 15, 15, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 2px rgba(238, 15, 15, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(238, 15, 15, 0);
+  }
+}
+
+.service-item.pulse {
+  animation: pulseBorder 3s;
 }
 
 /* Ensure the hero section and header remain unaffected */
@@ -79,7 +111,6 @@
 /* If using a custom icon color, you can enforce it here as well */
 .navbar-toggler .fas {
   color: black; /* or any color you prefer */
-  margin-top: 10px;
 }
 
 @media (max-width: 767.98px) {
@@ -198,6 +229,7 @@
   color: #333; /* You can choose a different color for more impact */
   text-transform: uppercase; /* Optional: uppercase for more presence */
 }
+
 
 .service-price {
   font-family: 'Montserrat', sans-serif; /* Keep font consistent with the title */

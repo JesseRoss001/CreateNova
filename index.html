@@ -59,7 +59,7 @@
     <div class="container">
       <div class="row service-row-top card-deck">
         <div class="col-12 justify-content-center align-items-center pt-5">
-          <h3 class=" pt-5 pb-4 service-item service-category text-center display-5" id="web-design">Web Design Magic <br class="d-block d-md-none"><span class="service-price display-6">  1,000,000 IDR + </span></h3>
+          <h3 class=" pt-4 pb-4 service-item service-category text-center display-5" id="web-design">Web Design Magic <br class="d-block d-md-none"><span class="service-price display-6">  1,000,000 IDR + </span></h3>
           <div class="row ">
             <div class="col-lg-3 col-md-6 ">
  
@@ -96,7 +96,7 @@
           </div>
         </div>
         <div class="col-12 mt-5 ">
-          <h3 class=" pt-5 pb-4 service-item service-category text-center display-5 service-category" id="creator">Content Creator Captivation <span class="service-price display-6">  500,000 IDR + </span></h3>
+          <h3 class=" pt-4 pb-4 service-item service-category text-center display-5 service-category" id="creator">Content Creator Captivation <span class="service-price display-6">  500,000 IDR + </span></h3>
           <div class="row ">
             <div class="col-lg-3 col-md-6">
               <div class="service-item">
@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var rect = servicesSection.getBoundingClientRect();
   var topPosition = rect.top;
 
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 30; i++) {
     let drop = document.createElement('div');
     drop.className = 'drop';
     drop.style.width = `${Math.random() * 15 + 5}px`;
@@ -172,6 +172,55 @@ document.addEventListener("DOMContentLoaded", function() {
     drop.style.animationDelay = `${Math.random() * 5}s`;
     servicesSection.appendChild(drop); // Append to the services section
   }
+});
+
+document.querySelectorAll('.service-item').forEach(item => {
+  item.addEventListener('click', function() {
+    this.classList.add('pulse');
+    // Remove the 'pulse' class after the animation ends
+    this.addEventListener('animationend', () => {
+      this.classList.remove('pulse');
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const creatorElement = document.getElementById('creator');
+  const icons = [
+    'fab fa-instagram', 'fab fa-facebook-f', 'fab fa-twitter', 
+    'fab fa-youtube', 'fab fa-linkedin-in', 'fab fa-tiktok'
+  ];
+
+  creatorElement.addEventListener('mouseover', function() {
+    const icon = document.createElement('i');
+    const randomIcon = icons[Math.floor(Math.random() * icons.length)];
+    icon.className = `${randomIcon} social-drop`;
+    icon.style.position = 'absolute';
+    icon.style.left = `${Math.random() * creatorElement.offsetWidth}px`;
+    icon.style.top = '-50px'; // Start above the element
+    icon.style.fontSize = '2rem';
+    icon.style.color = 'rgba(0, 0, 0, 0.5)';
+    icon.style.animation = `dropAnimation ${Math.random() * 10 + 5}s forwards`;
+
+    creatorElement.appendChild(icon);
+
+    icon.addEventListener('animationend', function() {
+      icon.remove(); // Clean up the icon after the animation ends
+    });
+  });
+
+  // Add CSS for animation in the head
+  const style = document.createElement('style');
+  style.innerHTML = `
+    @keyframes dropAnimation {
+      0% { transform: translateY(0); opacity: 0; }
+      100% { transform: translateY(${window.innerHeight}px); opacity: 1; }
+    }
+    .social-drop {
+      will-change: transform, opacity;
+    }
+  `;
+  document.head.appendChild(style);
 });
 </script>
   
