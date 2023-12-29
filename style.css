@@ -211,6 +211,7 @@ section::after {
 /* General styling for service items */
 .service-item {
   padding: 10px;
+  padding-bottom:40px;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -300,4 +301,20 @@ section::after {
 
 .btn-17:active, .btn-success:active {
   transform: scale(0.95); /* Slight decrease in size on click */
+}
+
+@media screen and (min-width: 1792px) {
+  .container {
+    max-width: 1600px; /* Set a maximum width */
+    margin: auto; /* Center the container */
+  }
+
+  .hero-image {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any inline properties */
+    margin: 0 auto; /* Center the image */
+  }
+
+  /* Any other specific large screen adjustments */
 }
